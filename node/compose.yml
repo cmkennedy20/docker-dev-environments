@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  go-container:
+    container_name: node-container
+    image: node-test:latest
+    build: 
+      dockerfile: ./node.Dockerfile
+      context: .
+    environment:
+      - INPUT_ENV_VAR="it passed through"
+    volumes:
+      - ".:/etc/"
+    entrypoint: /bin/bash /etc/startup.sh

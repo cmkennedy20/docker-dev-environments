@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  go-container:
+    container_name: go-lang-container
+    image: go-lang:latest
+    build: 
+      dockerfile: ./go.Dockerfile
+      context: .
+    environment:
+      - INPUT_ENV_VAR="it passed through"
+    volumes:
+      - ".:/go/src/"
+    entrypoint: /bin/bash /go/src/startup.sh
