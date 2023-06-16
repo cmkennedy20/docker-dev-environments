@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  go-container:
+  node-container:
     container_name: node-container
     image: node-test:latest
     build: 
